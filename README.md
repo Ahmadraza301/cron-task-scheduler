@@ -2,6 +2,32 @@
 
 A modern, responsive Single Page Application (SPA) built with Angular 19+ for managing scheduled tasks using cron expressions. Features real-time cron validation, human-readable schedule translation, and comprehensive property-based testing.
 
+## 📸 Screenshots
+
+### Application Overview
+![Screenshot 1](screenshots/Image1.png)
+
+### Task Creation Form
+![Screenshot 2](screenshots/Image2.png)
+
+### Real-Time Cron Validation
+![Screenshot 3](screenshots/Image3.png)
+
+### Task Dashboard
+![Screenshot 4](screenshots/image5.png)
+
+### Task Management
+![Screenshot 5](screenshots/Image6.png)
+
+### Edit Task
+![Screenshot 6](screenshots/Image7.png)
+
+### Responsive Design
+![Screenshot 7](screenshots/Image8.png)
+
+### Complete Interface
+![Screenshot 8](screenshots/Image4.png)
+
 ## ✨ Features
 
 - **Task Management**: Create, edit, delete, and manage scheduled tasks
