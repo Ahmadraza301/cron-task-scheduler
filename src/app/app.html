@@ -1,0 +1,15 @@
+<div class="app-container">
+  <header class="app-header">
+    <h1>⏰ Cron Task Scheduler</h1>
+    <p class="app-subtitle">Manage your scheduled tasks with ease</p>
+  </header>
+
+  <main class="app-main">
+    <app-task-form></app-task-form>
+    <app-task-dashboard (editTask)="onEditTask($event)"></app-task-dashboard>
+  </main>
+
+  <footer class="app-footer">
+    <p>Built with Angular 19+ | Powered by RxJS & Cronstrue</p>
+  </footer>
+</div>

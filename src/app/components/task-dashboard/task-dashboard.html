@@ -1,0 +1,54 @@
+<div class="dashboard-container">
+  <h2>Task Dashboard</h2>
+
+  <div class="empty-state" *ngIf="(tasks$ | async)?.length === 0">
+    <div class="empty-icon">📋</div>
+    <p>No tasks yet. Create your first task!</p>
+  </div>
+
+  <div class="tasks-grid" *ngIf="(tasks$ | async)?.length! > 0">
+    <div class="task-card" *ngFor="let task of tasks$ | async">
+      <div class="task-header">
+        <h3 class="task-name">{{ task.name }}</h3>
+        <span class="task-status" [ngClass]="getStatusClass(task.status)">
+          {{ task.status }}
+        </span>
+      </div>
+
+      <div class="task-body">
+        <div class="task-field" *ngIf="task.description">
+          <label>Description:</label>
+          <p>{{ task.description }}</p>
+        </div>
+
+        <div class="task-field">
+          <label>Cron Expression:</label>
+          <p class="cron-expression">{{ task.cronExpression }}</p>
+        </div>
+
+        <div class="task-field">
+          <label>Schedule:</label>
+          <p class="cron-readable">{{ getReadableCron(task.cronExpression) }}</p>
+        </div>
+      </div>
+
+      <div class="task-actions">
+        <button class="btn btn-edit" (click)="onEdit(task)" title="Edit task">
+          ✏️ Edit
+        </button>
+        <button 
+          class="btn btn-toggle" 
+          [class.btn-pause]="task.status === 'Active'"
+          [class.btn-resume]="task.status === 'Paused'"
+          (click)="onToggleStatus(task.id)" 
+          [title]="getToggleButtonText(task.status) + ' task'"
+        >
+          {{ task.status === 'Active' ? '⏸️ Pause' : '▶️ Resume' }}
+        </button>
+        <button class="btn btn-delete" (click)="onDelete(task.id)" title="Delete task">
+          🗑️ Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
